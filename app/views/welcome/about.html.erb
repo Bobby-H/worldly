@@ -1,2 +1,10 @@
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
+<h1>About Me</h1>
+<p>Lots of interesting things!</p>
+<p>My favorite color is <%= @color %></p>
+<%= link_to "Blue", welcome_about_path(color: "Blue"), class: "btn btn-primary" %>
+<%= link_to "Red", welcome_about_path(color: "Red"), class: "btn btn-danger" %>
