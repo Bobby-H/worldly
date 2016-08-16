@@ -12,17 +12,14 @@
   <% @destinations.each do |destination| %>
     <div class="col-md-4">
       <div class="well">
-        <p><%= "#{destination.city}, #{destination.country}" %></p>
+        <strong><i><%= "#{destination.city}" %></i>, <%= "#{destination.country}" %></strong>
         <p><%= "#{destination.description}" %></p>
         <p>
-          <td><%= link_to 'Show', destination, class: "btn btn-primary" %></td>
-          <td><%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %></td>
-          <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          <td><%= link_to 'Show', destination, class: "btn btn-default" %></td>
+          <td><%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-default" %></td>
+          <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
         </p>
       </div>
     </div>
   <% end %>
 </div>
-
-
-<%= link_to 'New Destination', new_destination_path %>
