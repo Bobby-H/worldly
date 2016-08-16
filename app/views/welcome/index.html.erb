@@ -1,6 +1,8 @@
-<h1>My Destination Wishlist</h1>
+<h1>Welcome to Worldly</h1>
+<p>Come see the world!</p>
 
-<%= link_to 'New Destination', new_destination_path, class: 'btn btn-info' %>
+<p>My name is Bobby; I hale from <%= @homeland %></p>
+
 <% @countries.each do |country| %>
   <p><%= country %></p>
 <% end %>
