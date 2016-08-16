@@ -4,9 +4,27 @@
 <p>My name is Bobby; I hale from <%= @homeland %></p>
 
 <% @countries.each do |country| %>
-  <li><%= country %></li>
+  <p><%= country %></p>
 <% end %>
 
 <% @travel_pics.each do |pic| %>
-  <li><%= image_tag pic, class: "img-responsive" %></li>
+  <div class="col-sm-4 text-center">
+    <p><%= image_tag pic, class: "img-responsive" %></p>
+  </div>
 <% end %>
+<table class="table">
+  <tr>
+    <% @united_states.each do |key, value| %>
+      <th><%= key.titleize %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @united_states.each do |key, value| %>
+      <% if value.kind_of?(Array) %>
+        <td><%= value.join(", ") %></td>
+        <% else %>
+        <td><%= value %></td>
+      <% end %>
+    <% end %>
+  </tr>
+</table>
