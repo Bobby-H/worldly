@@ -20,7 +20,8 @@
     <div class="col-md-4">
       <div class="well">
         <strong><i><%= "#{destination.city}" %></i>, <%= "#{destination.country}" %></strong>
-        <p><%= "#{destination.description}" %></p>
+        <p>population<%= destination.population %></p>
+        <p><%= destination.description %></p>
         <p>
           <td><%= link_to 'Show', destination, class: "btn btn-default" %></td>
           <td><%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-default" %></td>
