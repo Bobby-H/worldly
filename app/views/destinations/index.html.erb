@@ -10,17 +10,20 @@
     <li><%= link_to c.country, destinations_path(country: c.country) %></li>
   <% end %>
 </ul>
+<center>
+  <h1>My Destination Wishlist</h1>
 
-<h1>My Destination Wishlist</h1>
+  <%= link_to 'New Destination', new_destination_path, class: 'btn btn-info' %>
 
-<%= link_to 'New Destination', new_destination_path, class: 'btn btn-info' %>
-
-<div class="row">
-  <% @destinations.each do |destination| %>
+  <div class="row">
+    <% @destinations.each do |destination| %>
     <div class="col-md-4">
       <div class="well">
         <strong><i><%= "#{destination.city}" %></i>, <%= "#{destination.country}" %></strong>
         <p>population<%= destination.population %></p>
+        <% if destination.avatar_file_name != nil %>
+          <p><%= image_tag destination.avatar.url(:medium), class: "img-responsive" %></p>
+        <% end %>
         <p><%= destination.description %></p>
         <p>
           <td><%= link_to 'Show', destination, class: "btn btn-default" %></td>
@@ -29,5 +32,6 @@
         </p>
       </div>
     </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+</center>
