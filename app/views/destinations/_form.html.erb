@@ -2,7 +2,6 @@
   <% if @destination.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
-
       <ul>
       <% @destination.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -18,6 +17,10 @@
   <div class="form-group">
     <%= f.label :country %><br>
     <%= f.text_field :country, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :population %><br>
+    <%= f.text_field :population, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :description %><br>
